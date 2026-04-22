@@ -9,19 +9,19 @@ FocusFlow combines a Pomodoro timer, adaptive ambient music, and live weather co
 - Smart Pomodoro workflow with focus, short break, and long break cycles
 - Runtime settings panel for timer duration, audio, notifications, and volume
 - Session persistence for timer state and user preferences via localStorage
-- Integrated focus music player with 70+ tracks, shuffle, queue, and auto-play in focus phase
+- Integrated focus music player with 70+ tracks, shuffle, search, progress timeline, and auto-play in focus phase
 - Location-aware weather card with current conditions and 3-day forecast
 - Keyboard shortcuts and browser notifications for smoother flow
-- Responsive layout for desktop and mobile
+- Fully responsive layout with desktop, tablet, and mobile behavior
 
 ## Preview
 
-![FocusFlow App Screenshot](public/FocusFlow.jpg)
+![FocusFlow App Screenshot](public/FocusFlow.png)
 
 ## Tech Stack
 
 - React 19
-- Vite 6
+- Vite 8
 - Lucide React
 - Plain CSS (tokenized theme system)
 - Open-Meteo API
@@ -76,6 +76,7 @@ npm run preview
 - Focus and break phase transitions run automatically
 - Timer progress is calculated from elapsed wall-clock time for better accuracy
 - Timer session state is restored on refresh
+- Start, pause, and reset are available from both UI controls and keyboard shortcuts
 
 ### Settings System
 
@@ -87,13 +88,23 @@ npm run preview
 
 - Audio is prepared per selected track and synced with timer phase
 - Auto-play runs during focus sessions (when enabled)
-- Supports previous, next, shuffle, and direct track selection
+- Supports previous, next, shuffle, direct track selection, and real-time track search
+- Displays current playback progress and elapsed or total track time
+- Uses preconnect and prefetch hints to improve perceived loading latency
+- Uses hover-expand behavior on desktop and tap-to-open track list on touch devices
 
 ### Weather Module
 
 - Uses browser geolocation (with permission)
 - Fetches current weather + 3-day forecast from Open-Meteo
 - Includes unit toggle and manual refresh
+
+### Responsive Layout
+
+- Desktop: floating utility cards and compact player interactions
+- Tablet: cleaner card hierarchy with improved spacing and readability
+- Mobile: stacked layout, larger touch targets, and non-squeezed control groups
+- Player and utility surfaces remain usable without hover interactions
 
 ## Project Structure
 
@@ -119,9 +130,7 @@ src/
 
 ## Accessibility and UX
 
-- Keyboard shortcuts:
-  - Space: Start or pause timer
-  - Esc: Reset timer
+- Keyboard shortcuts: `Space` starts or pauses timer, `Esc` resets timer
 - ARIA labels on key controls
 - High-contrast neon theme with clear visual phase states
 
