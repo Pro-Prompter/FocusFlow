@@ -1,0 +1,25 @@
+:root {
+  --font-family-ui: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  --focus-color: #00ff99;
+  --break-color: #ff5722;
+  --surface-0: #171717;
+  --surface-1: rgba(255, 255, 255, 0.05);
+  --surface-2: rgba(255, 255, 255, 0.08);
+  --surface-3: rgba(255, 255, 255, 0.12);
+  --control-border: rgba(255, 255, 255, 0.14);
+  --control-border-focus: rgba(0, 255, 153, 0.55);
+  --focus-glow: 0 0 0 3px rgba(0, 255, 153, 0.2);
+  --progress-background: rgba(255, 255, 255, 0.05);
+  --text-primary: #fff;
+  --text-secondary: #888;
+  --text-muted: #c9c9c9;
+  --background-dark: #1f1c1c;
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
